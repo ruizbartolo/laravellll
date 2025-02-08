@@ -7,14 +7,14 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about', ['nama' =>'Ayoko Ruiz Bartolomeus '] );
+    return view('about', ['name' =>'Ayoko Ruiz Bartolomeus ', 'title' => 'About' ]);
 });
 Route::get('/home', function () {
-    return view('home');
+    return view('home', ['title' => 'Home Page']);
 });
 Route::get('/blog', function () {
-    return view('blog');
+    return view('blog', ['title' => 'Blog']);
 });
 Route::get('/contact', function () {
-    return view('contact');
+    return view('contact', ['title' => 'Contact']);
 });
