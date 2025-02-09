@@ -9,10 +9,10 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
-              <a href="/blog" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Blog</a>
-              <a href="/about" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-              <a href="/contact" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+              <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+              <x-nav-link href="/posts" :active="request()->is('/posts')">Blog</x-nav-link>
+              < <x-nav-link href="/about" :active="request()->is('/about')">About</x-nav-link>
+              <x-nav-link href="/contact" :active="request()->is('/contact')">Contact</x-nav-link>
             </div>
           </div>
         </div>
@@ -26,7 +26,8 @@
                 <button type="button"  @click="isOpen = !isOpen" class="...">
                   <span class="absolute -inset-1.5"></span>
                   <span class="sr-only">Open user menu</span>
-                  <img class="size-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  <img class="size-8 rounded-full" 
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                 </button>
               </div>
               <div  x-show="isOpen"
@@ -67,7 +68,7 @@
       <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
        <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-       <x-nav-link href="/blog" :active="request()->is('/blog')">Blog</x-nav-link>
+       <x-nav-link href="/posts" :active="request()->is('/posts')">Blog</x-nav-link>
        <x-nav-link href="/about" :active="request()->is('/about')">About</x-nav-link>
        <x-nav-link href="/contact" :active="request()->is('/contact')">Contact</x-nav-link>
       </div>
